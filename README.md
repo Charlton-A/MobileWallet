@@ -132,7 +132,7 @@ A Prometheus module exitst for gin https://github.com/zsais/go-gin-prometheus .I
 
 ## Assumptions
 *API is not meant for public release but for internal communication between applications and the database .\
-*All wallets use the same cuurency
+*All wallets use the same currency\
 *Password managed is handled by another party and the API only offers authentication for resoure acccess\
 *The API is still  at prototyping level and has yet to be optimized for scalability
 
