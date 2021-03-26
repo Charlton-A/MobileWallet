@@ -13,5 +13,7 @@ replace github.com/charlton/practs/mwallet/forms => ../forms
 require (
 	github.com/charlton/practs/mwallet/handlers v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.6.3
+	github.com/natefinch/lumberjack v2.0.0+incompatible
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 
 )

@@ -12,7 +12,9 @@ import (
 
 
 func TestPing(t *testing.T){
-   ts:=httptest.NewServer(SetUp())
+    svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    resp ,err:=http.Get(fmt.Sprintf("%s/api/v1/users/ping",ts.URL))
@@ -28,7 +30,9 @@ func TestPinAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodGet, fmt.Sprintf("%s/api/v1/users/ping",ts.URL) ,nil)
@@ -51,7 +55,9 @@ func TestUserCreateAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodPost, fmt.Sprintf("%s/api/v1/users/create",ts.URL) ,nil)
@@ -74,7 +80,9 @@ func TestUserBalanceAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodGet, fmt.Sprintf("%s/api/v1/users/balance/1",ts.URL) ,nil)
@@ -98,7 +106,9 @@ func TestUserTransferAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodPost, fmt.Sprintf("%s/api/v1/users/wallet/transfer",ts.URL) ,nil)
@@ -121,7 +131,8 @@ func TestUserTransactionsAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodGet, fmt.Sprintf("%s/api/v1/users/transactions/1",ts.URL) ,nil)
@@ -144,7 +155,9 @@ func TestWalletCreateAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodPost, fmt.Sprintf("%s/api/v1/users/wallet/create",ts.URL) ,nil)
@@ -167,7 +180,9 @@ func TestWalletUpdateAuth(t *testing.T){
    client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-   ts:=httptest.NewServer(SetUp())
+   svr,_:=SetUp()
+   ts:=httptest.NewServer(svr)
+
    defer ts.Close()
 
    req ,err:=http.NewRequest(http.MethodPost, fmt.Sprintf("%s/api/v1/users/wallet/update",ts.URL) ,nil)
@@ -175,7 +190,7 @@ func TestWalletUpdateAuth(t *testing.T){
 	   t.Fatalf("expected no error got %#v",err)
    }
    req.SetBasicAuth(os.Getenv("APP_KEY"), os.Getenv("APP_PASS"))
-	resp, _:= client.Do(req)
+	resp, err:= client.Do(req)
    if err != nil {
 		t.Fatalf("expected no error got  %#v", err)
 	}
