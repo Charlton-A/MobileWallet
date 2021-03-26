@@ -67,7 +67,7 @@ cd cli/ && go test
 | GET | /api/v1/users/transactions/:user_id  |Get user transaction details |
 
 
-######POST endpoints and their  respective  json data formats.
+###### POST endpoints and their  respective  json data formats.
 ##### POST    /api/v1/users/create
 ```json
 {
@@ -131,5 +131,5 @@ A Prometheus module exitst for gin https://github.com/zsais/go-gin-prometheus .I
 *API is  not meant for public release but for internal communication between applications and the database
 *All wallets use the same cuurency
 *Password managed is handled by another party and the API only offers authentication for resoure acccess
-*The API is still  at prototyping level and has yet to be optimized for scalability 
+*The API is still  at prototyping level and has yet to be optimized for scalability
 
