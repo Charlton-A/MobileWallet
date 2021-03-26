@@ -66,6 +66,8 @@ cd cli/ && go test
 | POST | /api/v1/users/wallet/transfer  |  Transfer funds from one wallet to another |
 | GET | /api/v1/users/transactions/:user_id  |Get user transaction details |
 
+To acces the ednpoints use creadientials APP_KEY and app APP_PASS via basic auth.
+
 
 ###### POST endpoints and their  respective  json data formats.
 ##### POST    /api/v1/users/create
