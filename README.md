@@ -36,7 +36,7 @@ A simple Go REST API for a  mobile wallet allowing creation of users, transfer o
 ## Installation
 
 Set up postgres  using the db.sql file.\
-Ensure you create the relations in the mobile schema in the created databse.\
+Ensure you **create the relations in the mobile schema** in the created databse.\
 Configure database dsn and basic auth setting on an .env file.\
 You can create one similar to the sample(.env.sample).\
 Load the .env file.
