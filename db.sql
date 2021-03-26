@@ -1,4 +1,4 @@
-CREATE DATABASE MobileWallet;
+CREATE DATABASE mobilewallet;
 
 CREATE SCHEMA  mobile;
 
