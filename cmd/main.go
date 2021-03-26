@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func SetUp() *gin.Engine{
 	router := gin.Default()
 
 	appCtx, cancel := context.WithCancel(context.Background())
@@ -42,5 +42,11 @@ func main() {
 		v1.POST("/wallet/transfer", app.Transfer)
 		v1.GET("/transactions/:user_id", app.UserTransaction)
 	}
-	router.Run()
+	return router
+}
+
+func main(){
+	r := SetUp()
+	r.Run()
+
 }
