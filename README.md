@@ -124,7 +124,7 @@ Action codes meaning
 ```
 ## Monitoring
 
-Simple monitoring can be done by checking the log file .
+Simple monitoring can be done by checking the log file .\
 A Prometheus module exitst for gin https://github.com/zsais/go-gin-prometheus .It can be added as a middleware.
 
 
