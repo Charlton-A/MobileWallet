@@ -1,4 +1,4 @@
-# MobileWallet
+# Plutus
 
 A simple Go REST API for a  mobile wallet allowing creation of users, transfer of  funds, checking of balances  and transactions.
 
