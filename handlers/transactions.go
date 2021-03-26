@@ -69,7 +69,7 @@ func (a *Application) Transfer(c *gin.Context){
 	}
 	rows ,_=res.RowsAffected()
 	if rows<=0{
-		c.JSON(http.StatusBadRequest, gin.H{"error":"dest_user_id or dest_wallte_id does not exists",})
+		c.JSON(http.StatusBadRequest, gin.H{"error":"dest_user_id or dest_wallet_id does not exists",})
 		tX.Rollback()
 		return
 
